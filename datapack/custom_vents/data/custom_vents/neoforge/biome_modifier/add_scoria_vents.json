@@ -1,0 +1,26 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:snowy_plains",
+    "minecraft:ice_spikes",
+    "terralith:cold_shrubland",
+    "terralith:frozen_cliffs",
+    "terralith:glacial_chasm",
+    "terralith:gravel_desert",
+    "terralith:rocky_shrubland",
+    "terralith:skylands_winter",
+    "terralith:snowy_badlands",
+    "terralith:snowy_cherry_grove",
+    "terralith:wintry_forest",
+    "terralith:wintry_lowlands",
+    "terralith:lush_valley",
+    "terralith:shield_clearing",
+    "terralith:white_cliffs",
+    "terralith:yellowstone",
+    "terralith:yosemite_cliffs",
+    "terralith:yosemite_lowlands",
+    "terralith:ice_marsh"
+  ],
+  "features": ["molten_vents:scoria_vent", "molten_vents:aquatic_scoria_vent"],
+  "step": "vegetal_decoration"
+}

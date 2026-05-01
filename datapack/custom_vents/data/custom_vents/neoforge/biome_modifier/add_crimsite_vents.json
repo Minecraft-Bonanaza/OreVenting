@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": ["minecraft:desert", "minecraft:badlands", "minecraft:eroded_badlands", "minecraft:wooded_badlands", "terralith:ancient_sands", "terralith:bryce_canyon", "terralith:desert_canyon", "terralith:desert_oasis", "terralith:desert_spires", "terralith:granite_cliffs", "terralith:lush_desert", "terralith:red_oasis", "terralith:sandstone_valley", "terralith:savanna_badlands", "terralith:white_mesa"],
+  "features": ["molten_vents:crimsite_vent", "molten_vents:aquatic_crimsite_vent"],
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#molten_vents:none",
+  "features": [],
+  "step": "vegetal_decoration"
+}
