@@ -1,6 +1,29 @@
 {
   "type": "neoforge:add_features",
-  "biomes": ["minecraft:stony_peaks", "minecraft:jagged_peaks", "minecraft:frozen_peaks", "minecraft:stony_shore", "minecraft:meadow", "minecraft:snowy_slopes", "minecraft:grove", "minecraft:windswept_hills", "minecraft:windswept_gravelly_hills", "minecraft:windswept_forest", "terralith:alpine_grove", "terralith:ashen_savanna", "terralith:caldera", "terralith:emerald_peaks", "terralith:painted_mountains", "terralith:rocky_mountains", "terralith:savanna_slopes", "terralith:scarlet_mountains", "terralith:volcanic_crater", "terralith:volcanic_peaks"],
-  "features": ["molten_vents:ochrum_vent", "molten_vents:aquatic_ochrum_vent"],
+  "biomes": [
+    "minecraft:stony_peaks",
+    "minecraft:jagged_peaks",
+    "minecraft:frozen_peaks",
+    "minecraft:stony_shore",
+    "minecraft:meadow",
+    "minecraft:snowy_slopes",
+    "minecraft:grove",
+    "minecraft:windswept_hills",
+    "minecraft:windswept_gravelly_hills",
+    "minecraft:windswept_forest",
+    "terralith:alpine_grove",
+    "terralith:ashen_savanna",
+    "terralith:caldera",
+    "terralith:emerald_peaks",
+    "terralith:painted_mountains",
+    "terralith:rocky_mountains",
+    "terralith:savanna_slopes",
+    "terralith:scarlet_mountains",
+    "terralith:volcanic_crater",
+    "terralith:volcanic_peaks"
+  ],
+  "features": [
+    "molten_vents:ochrum_vent"
+  ],
   "step": "vegetal_decoration"
 }

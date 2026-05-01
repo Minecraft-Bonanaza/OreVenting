@@ -21,6 +21,8 @@
     "terralith:yosemite_lowlands",
     "terralith:ice_marsh"
   ],
-  "features": ["molten_vents:scoria_vent", "molten_vents:aquatic_scoria_vent"],
+  "features": [
+    "molten_vents:scoria_vent"
+  ],
   "step": "vegetal_decoration"
 }

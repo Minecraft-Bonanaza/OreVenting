@@ -36,12 +36,12 @@ Overrides Create: Molten Vents biome placement. Disables the default "all vents 
 
 | Category | Vent | Resource | Biomes | Rarity (chance) |
 |----------|------|----------|--------|:---------------:|
-| Hot/Dry | Crimsite | Iron | Desert, badlands, savanna variants | 1/100 |
-| Hot/Dry | Scorchia | Quartz/Blaze | Same as above | 1/100 |
-| Cold/Frozen | Scoria | Gunpowder (30%) | Snowy plains, ice spikes, frozen cliffs, glacial chasm, etc. | 1/70 |
-| Mountains | Ochrum | Gold | All mountain peaks, slopes, windswept, volcanic | 1/60 |
-| Ocean | Asurine | Zinc → Brass | All ocean biomes | 1/250 |
-| Ocean | Veridium | Copper | All ocean biomes | 1/250 |
+| Hot/Dry | Crimsite | Iron | Desert, badlands, savanna variants | 1/1500 |
+| Hot/Dry | Scorchia | Quartz/Blaze | Same as above | 1/2000 |
+| Cold/Frozen | Scoria | Gunpowder (30%) | Snowy plains, ice spikes, frozen cliffs, glacial chasm, etc. | 1/900 |
+| Mountains | Ochrum | Gold | All mountain peaks, slopes, windswept, volcanic | 1/900 |
+| Ocean | Asurine | Zinc → Brass | All ocean biomes | 1/800 |
+| Ocean | Veridium | Copper | All ocean biomes | 1/800 |
 
 ### World Coverage (volume-based, no double-counting)
 
@@ -64,16 +64,16 @@ datapack/custom_vents/
     │   ├── tags/worldgen/biome/
     │   │   └── none.json                      ← empty biome tag
     │   └── worldgen/placed_feature/
-    │       ├── crimsite_vent.json             ← chance: 100
-    │       ├── scorchia_vent.json             ← chance: 100
-    │       ├── scoria_vent.json               ← chance: 70
-    │       ├── ochrum_vent.json               ← chance: 60
-    │       ├── aquatic_asurine_vent.json      ← chance: 250
-    │       ├── aquatic_veridium_vent.json     ← chance: 250
-    │       ├── aquatic_crimsite_vent.json     ← chance: 100
-    │       ├── aquatic_scorchia_vent.json     ← chance: 100
-    │       ├── aquatic_scoria_vent.json       ← chance: 70
-    │       └── aquatic_ochrum_vent.json       ← chance: 60
+    │       ├── crimsite_vent.json             ← chance: 1500
+    │       ├── scorchia_vent.json             ← chance: 2000
+    │       ├── scoria_vent.json               ← chance: 900
+    │       ├── ochrum_vent.json               ← chance: 900
+    │       ├── aquatic_asurine_vent.json      ← chance: 800
+    │       ├── aquatic_veridium_vent.json     ← chance: 800
+    │       ├── aquatic_crimsite_vent.json     ← chance: 1500
+    │       ├── aquatic_scorchia_vent.json     ← chance: 2000
+    │       ├── aquatic_scoria_vent.json       ← chance: 900
+    │       └── aquatic_ochrum_vent.json       ← chance: 900
     └── custom_vents/
         └── neoforge/biome_modifier/
             ├── add_crimsite_vents.json        ← Hot/Dry biomes
@@ -101,15 +101,13 @@ datapack/custom_vents/
 ## KubeJS Scripts
 
 ### ore_reduction.js
-Reduces vanilla iron, copper, and gold ore generation by 50%. Removes default placed features and re-adds at half count.
+Reduces vanilla iron, copper, and gold ore vein **size** by 60%. Veins spawn at the same frequency but contain fewer blocks per vein, pushing players toward vents for bulk resources.
 
-| Ore | Vanilla Count | Reduced Count |
-|-----|:------------:|:-------------:|
-| Iron (upper) | 90/chunk | 45/chunk |
-| Iron (middle) | 10/chunk | 5/chunk |
-| Copper | 16/chunk | 8/chunk |
-| Gold | 4/chunk | 2/chunk |
-| Gold (lower) | ~1/chunk | ~0.5/chunk |
+| Ore | Vanilla Size | Reduced Size |
+|-----|:------------:|:------------:|
+| Iron | 9 blocks/vein | 4 blocks/vein |
+| Copper | 10 blocks/vein | 4 blocks/vein |
+| Gold | 9 blocks/vein | 4 blocks/vein |
 
 ### scoria_crushing.js
 Overrides Create's Scoria crushing recipe:
@@ -132,6 +130,33 @@ Extracted from mod JARs for analysis:
 - Biome patch size depends on noise frequency (not configurable without forking Terralith)
 - Tectonic controls terrain shape (height/width) but not biome distribution
 - World height capped at Y 320 (min -64, height 384) — cannot safely increase without breaking Terralith
+
+---
+
+## Releases
+
+Releases are automated via GitHub Actions. When you push a version tag, two zips are built and attached to a GitHub Release page.
+
+### Creating a release
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+### What gets packaged
+
+| Zip | Contents | Install location |
+|-----|----------|-----------------|
+| `OreVenting-datapack-v*.zip` | `custom_vents/` folder | `<instance>/saves/<world>/datapacks/` |
+| `OreVenting-kubejs-v*.zip` | `server_scripts/` folder | `<instance>/kubejs/` |
+
+### Versioning
+- `v<major>.<minor>.<patch>`
+- Major: breaking changes (new mod requirements)
+- Minor: new features (new vent type, new biome)
+- Patch: tuning (rarity, recipe adjustments)
+
+---
 
 ## Mods
 - Create (+ Aero, Molten Vents, Crafts & Additions, Enchantment Industry, and more)
