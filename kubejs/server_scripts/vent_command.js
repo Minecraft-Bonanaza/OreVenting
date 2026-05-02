@@ -9,18 +9,18 @@ ServerEvents.basicCommand('custom_vent', event => {
 
   const vents = []
   if (hot.includes(biome)) {
-    vents.push('§6Crimsite Vent§r (1/1500)')
-    vents.push('§4Scorchia Vent§r (1/2000)')
+    vents.push('§6Crimsite Vent§r (1/700)')
+    vents.push('§4Scorchia Vent§r (1/700)')
   }
   if (cold.includes(biome)) {
-    vents.push('§8Scoria Vent§r (1/900)')
+    vents.push('§8Scoria Vent§r (1/400)')
   }
   if (mountain.includes(biome)) {
-    vents.push('§eOchrum Vent§r (1/900)')
+    vents.push('§eOchrum Vent§r (1/400)')
   }
   if (ocean.includes(biome)) {
-    vents.push('§bAsurine Vent§r (1/800)')
-    vents.push('§2Veridium Vent§r (1/800)')
+    vents.push('§bAsurine Vent§r (1/400)')
+    vents.push('§2Veridium Vent§r (1/400)')
   }
 
   if (vents.length === 0) {

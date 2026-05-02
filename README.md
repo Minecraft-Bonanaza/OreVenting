@@ -36,12 +36,12 @@ Overrides Create: Molten Vents biome placement. Disables the default "all vents 
 
 | Category | Vent | Resource | Biomes | Rarity (chance) |
 |----------|------|----------|--------|:---------------:|
-| Hot/Dry | Crimsite | Iron | Desert, badlands, savanna variants | 1/1500 |
-| Hot/Dry | Scorchia | Quartz/Blaze | Same as above | 1/2000 |
-| Cold/Frozen | Scoria | Gunpowder (30%) | Snowy plains, ice spikes, frozen cliffs, glacial chasm, etc. | 1/900 |
-| Mountains | Ochrum | Gold | All mountain peaks, slopes, windswept, volcanic | 1/900 |
-| Ocean | Asurine | Zinc → Brass | All ocean biomes | 1/800 |
-| Ocean | Veridium | Copper | All ocean biomes | 1/800 |
+| Hot/Dry | Crimsite | Iron | Desert, badlands, savanna variants | 1/700 |
+| Hot/Dry | Scorchia | Quartz/Blaze | Same as above | 1/700 |
+| Cold/Frozen | Scoria | Gunpowder (30%) | Snowy plains, ice spikes, frozen cliffs, glacial chasm, etc. | 1/400 |
+| Mountains | Ochrum | Gold | All mountain peaks, slopes, windswept, volcanic | 1/400 |
+| Ocean | Asurine | Zinc → Brass | All ocean biomes | 1/400 |
+| Ocean | Veridium | Copper | All ocean biomes | 1/400 |
 
 ### World Coverage (volume-based, no double-counting)
 
@@ -64,16 +64,35 @@ datapack/custom_vents/
     │   ├── tags/worldgen/biome/
     │   │   └── none.json                      ← empty biome tag
     │   └── worldgen/placed_feature/
-    │       ├── crimsite_vent.json             ← chance: 1500
-    │       ├── scorchia_vent.json             ← chance: 2000
-    │       ├── scoria_vent.json               ← chance: 900
-    │       ├── ochrum_vent.json               ← chance: 900
-    │       ├── aquatic_asurine_vent.json      ← chance: 800
-    │       ├── aquatic_veridium_vent.json     ← chance: 800
-    │       ├── aquatic_crimsite_vent.json     ← chance: 1500
-    │       ├── aquatic_scorchia_vent.json     ← chance: 2000
-    │       ├── aquatic_scoria_vent.json       ← chance: 900
-    │       └── aquatic_ochrum_vent.json       ← chance: 900
+    │       ├── crimsite_vent.json             ← chance: 700
+    │       ├── scorchia_vent.json             ← chance: 700
+    │       ├── scoria_vent.json               ← chance: 400
+    │       ├── ochrum_vent.json               ← chance: 400
+    │       ├── aquatic_asurine_vent.json      ← chance: 400
+    │       ├── aquatic_veridium_vent.json     ← chance: 400
+    │       ├── aquatic_crimsite_vent.json     ← chance: 700
+    │       ├── aquatic_scorchia_vent.json     ← chance: 700
+    │       ├── aquatic_scoria_vent.json       ← chance: 400
+    │       └── aquatic_ochrum_vent.json       ← chance: 400
+    ├── minecraft/
+    │   └── worldgen/
+    │       ├── configured_feature/            ← ore vein size overrides
+    │       │   ├── ore_iron_upper.json        ← size: 4 (vanilla 9)
+    │       │   ├── ore_iron_middle.json       ← size: 4 (vanilla 9)
+    │       │   ├── ore_gold.json              ← size: 4 (vanilla 9)
+    │       │   ├── ore_gold_lower.json        ← size: 4 (vanilla 9)
+    │       │   ├── ore_copper.json            ← size: 4 (vanilla 10)
+    │       │   └── ore_copper_large.json      ← size: 4 (vanilla 20)
+    │       └── placed_feature/                ← ore spawn count overrides
+    │           ├── ore_iron_upper.json        ← count: 60 (vanilla 90)
+    │           ├── ore_copper.json            ← count: 12 (vanilla 16)
+    │           └── ore_copper_large.json      ← count: 12 (vanilla 16)
+    ├── create/
+    │   └── worldgen/
+    │       ├── configured_feature/
+    │       │   └── zinc_ore.json              ← size: 6 (default 12)
+    │       └── placed_feature/
+    │           └── zinc_ore.json              ← count: 6 (default 8)
     └── custom_vents/
         └── neoforge/biome_modifier/
             ├── add_crimsite_vents.json        ← Hot/Dry biomes
@@ -100,14 +119,20 @@ datapack/custom_vents/
 
 ## KubeJS Scripts
 
-### ore_reduction.js
-Reduces vanilla iron, copper, and gold ore vein **size** by 60%. Veins spawn at the same frequency but contain fewer blocks per vein, pushing players toward vents for bulk resources.
+### ore_reduction (datapack)
+Reduces vanilla ore vein **size** and **spawn count** via configured_feature and placed_feature overrides. Pushes players toward vents for bulk resources.
 
-| Ore | Vanilla Size | Reduced Size |
-|-----|:------------:|:------------:|
-| Iron | 9 blocks/vein | 4 blocks/vein |
-| Copper | 10 blocks/vein | 4 blocks/vein |
-| Gold | 9 blocks/vein | 4 blocks/vein |
+| Ore | Vanilla Size | New Size | Vanilla Count | New Count |
+|-----|:------------:|:--------:|:-------------:|:---------:|
+| Iron (upper) | 9 | 4 | 90 | 60 |
+| Iron (middle) | 9 | 4 | 10 | — |
+| Copper | 10 | 4 | 16 | 12 |
+| Copper (large) | 20 | 4 | 16 | 12 |
+| Gold | 9 | 4 | 4 | — |
+| Gold (lower) | 9 | 4 | 1 | — |
+| Create Zinc | 12 | 6 | 8 | 6 |
+
+(— = unchanged from vanilla)
 
 ### scoria_crushing.js
 Overrides Create's Scoria crushing recipe:
