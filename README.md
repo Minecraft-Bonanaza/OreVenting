@@ -159,14 +159,20 @@ git push origin v1.0.0
 ---
 
 ## Mods
-- Create (+ Aero, Molten Vents, Crafts & Additions, Enchantment Industry, and more)
+- Create (+ Aero, Molten Vents, Crafts & Additions, Enchantment Industry, Propulsion, Addictives, and more)
 - Terralith + Tectonic (worldgen)
+- The Aether
 - Twilight Forest
+- Mowzie's Mobs
+- Alex's Mobs
+- Epic Fight
+- CBC (Create Big Cannons) + Military Supplement
 - KubeJS (scripting)
+- Spice of Life: Classic Edition
 - Jaden's Nether Expansion
 - YUNG's Better Nether Fortresses
 - Eternal Nether
-- Alex's Mobs
 - FTB Quests
+- Village Bounties
 - Project MMO
 - Quark

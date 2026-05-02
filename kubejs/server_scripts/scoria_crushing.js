@@ -3,6 +3,6 @@
 ServerEvents.recipes(event => {
   event.remove({ id: 'create:crushing/scoria' })
   event.recipes.create.crushing([
-    Item.of('minecraft:gunpowder').withChance(0.3)
+    CreateItem.of('minecraft:gunpowder', 0.3)
   ], 'create:scoria').processingTime(200)
 })
