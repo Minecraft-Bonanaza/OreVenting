@@ -13,7 +13,7 @@ Copy `datapack/custom_vents/` to:
 ```
 <instance>/saves/<world>/datapacks/custom_vents/
 ```
-Or for all new worlds:
+For all new worlds (global, 1.20.2+):
 ```
 <instance>/datapacks/custom_vents/
 ```

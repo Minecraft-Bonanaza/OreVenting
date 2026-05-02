@@ -1,0 +1,8 @@
+{
+  "type": "create:crushing",
+  "ingredients": [{ "item": "create:scoria" }],
+  "results": [
+    { "item": "minecraft:gunpowder", "chance": 0.3 }
+  ],
+  "processingTime": 200
+}
