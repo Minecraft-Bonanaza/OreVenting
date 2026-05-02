@@ -15,27 +15,14 @@
 - [KubeJS](https://modrinth.com/mod/kubejs) 2101.x (for server scripts)
 - [Open Loader](https://modrinth.com/mod/open-loader) (recommended) or manual copy
 
-### Option A: Open Loader (recommended)
-Copy the datapack folder into Open Loader's config directory:
+### Datapack
+Copy the datapack into Open Loader's config directory:
 ```
 cp -r datapack/custom_vents/ <instance>/config/openloader/data/custom_vents/
 ```
-Datapacks load automatically on every world create and world load. No per-world setup needed.
-
-### Option B: Per-world
-Copy into an existing world's datapacks folder:
-```
-cp -r datapack/custom_vents/ <instance>/saves/<world>/datapacks/custom_vents/
-```
-
-### Option C: Global (1.20.2+)
-Copy to the global datapacks folder (auto-included in new worlds only):
-```
-cp -r datapack/custom_vents/ <instance>/datapacks/custom_vents/
-```
+Loads automatically on every world create and world load.
 
 ### KubeJS Scripts
-Copy server scripts to your instance:
 ```
 cp kubejs/server_scripts/* <instance>/kubejs/server_scripts/
 ```
