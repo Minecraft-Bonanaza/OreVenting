@@ -1,6 +1,6 @@
 // /custom_vent — shows what vents spawn in your current biome
 ServerEvents.basicCommand('custom_vent', event => {
-  const biome = event.player.block.biomeId
+  const biome = String(event.player.block.biomeId)
 
   const hot = ['minecraft:desert','minecraft:badlands','minecraft:eroded_badlands','minecraft:wooded_badlands','terralith:ancient_sands','terralith:bryce_canyon','terralith:desert_canyon','terralith:desert_oasis','terralith:desert_spires','terralith:granite_cliffs','terralith:lush_desert','terralith:red_oasis','terralith:sandstone_valley','terralith:savanna_badlands','terralith:white_mesa','terralith:gravel_desert','terralith:arid_highlands','terralith:brushland','terralith:fractured_savanna','terralith:hot_shrubland','terralith:warped_mesa']
   const cold = ['minecraft:snowy_plains','minecraft:ice_spikes','terralith:cold_shrubland','terralith:frozen_cliffs','terralith:glacial_chasm','terralith:skylands_winter','terralith:snowy_badlands','terralith:snowy_cherry_grove','terralith:wintry_forest','terralith:wintry_lowlands','terralith:shield_clearing','terralith:ice_marsh','terralith:alpha_islands_winter','terralith:siberian_grove','terralith:siberian_taiga','terralith:snowy_maple_forest','terralith:snowy_shield']
