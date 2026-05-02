@@ -12,9 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           cd datapack && zip -r ../OreVenting-datapack-${GITHUB_REF_NAME}.zip custom_vents/
-          cd ../kubejs && zip -r ../OreVenting-kubejs-${GITHUB_REF_NAME}.zip server_scripts/
       - uses: softprops/action-gh-release@v2
         with:
           files: |
             OreVenting-datapack-*.zip
-            OreVenting-kubejs-*.zip
