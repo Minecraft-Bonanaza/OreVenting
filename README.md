@@ -8,23 +8,44 @@
 
 ## Installation
 
-### Datapack (Molten Vents override)
-Copy `datapack/custom_vents/` to:
+### Prerequisites
+- Minecraft 1.21.1 with NeoForge
+- [Create](https://modrinth.com/mod/create) 6.0+
+- [Create: Molten Vents](https://modrinth.com/mod/create-molten-vents) 2.1.1+
+- [KubeJS](https://modrinth.com/mod/kubejs) 2101.x (for server scripts)
+- [Open Loader](https://modrinth.com/mod/open-loader) (recommended) or manual copy
+
+### Option A: Open Loader (recommended)
+Copy the datapack folder into Open Loader's config directory:
 ```
-<instance>/saves/<world>/datapacks/custom_vents/
+cp -r datapack/custom_vents/ <instance>/config/openloader/data/custom_vents/
 ```
-For all new worlds (global, 1.20.2+):
+Datapacks load automatically on every world create and world load. No per-world setup needed.
+
+### Option B: Per-world
+Copy into an existing world's datapacks folder:
 ```
-<instance>/datapacks/custom_vents/
+cp -r datapack/custom_vents/ <instance>/saves/<world>/datapacks/custom_vents/
 ```
-Reload in-game with `/reload`. Verify with `/datapack list`.
+
+### Option C: Global (1.20.2+)
+Copy to the global datapacks folder (auto-included in new worlds only):
+```
+cp -r datapack/custom_vents/ <instance>/datapacks/custom_vents/
+```
 
 ### KubeJS Scripts
-Copy contents of `kubejs/server_scripts/` to:
+Copy server scripts to your instance:
 ```
-<instance>/kubejs/server_scripts/
+cp kubejs/server_scripts/* <instance>/kubejs/server_scripts/
 ```
-Scripts load automatically on world start or `/reload`.
+
+### Verify
+1. Load a world and run `/datapack list` — should show `[file/custom_vents]`
+2. Run `/vents` in chat to see vent types and rarities
+3. Generate new chunks in a vent biome to test spawning
+
+> **Note:** Vent and ore changes only affect newly generated chunks. Already-explored areas keep their original generation.
 
 ---
 
@@ -36,12 +57,12 @@ Overrides Create: Molten Vents biome placement. Disables the default "all vents 
 
 | Category | Vent | Resource | Biomes | Rarity (chance) |
 |----------|------|----------|--------|:---------------:|
-| Hot/Dry | Crimsite | Iron | Desert, badlands, savanna variants | 1/700 |
-| Hot/Dry | Scorchia | Quartz/Blaze | Same as above | 1/700 |
-| Cold/Frozen | Scoria | Gunpowder (30%) | Snowy plains, ice spikes, frozen cliffs, glacial chasm, etc. | 1/400 |
-| Mountains | Ochrum | Gold | All mountain peaks, slopes, windswept, volcanic | 1/400 |
-| Ocean | Asurine | Zinc → Brass | All ocean biomes | 1/400 |
-| Ocean | Veridium | Copper | All ocean biomes | 1/400 |
+| Hot/Dry | Crimsite | Iron | Desert, badlands, savanna variants | 1/250 |
+| Hot/Dry | Scorchia | Quartz/Blaze | Same as above | 1/250 |
+| Cold/Frozen | Scoria | Gunpowder (30%) | Snowy plains, ice spikes, frozen cliffs, glacial chasm, etc. | 1/200 |
+| Mountains | Ochrum | Gold | All mountain peaks, slopes, windswept, volcanic | 1/200 |
+| Ocean | Asurine | Zinc → Brass | All ocean biomes | 1/300 |
+| Ocean | Veridium | Copper | All ocean biomes | 1/300 |
 
 ### World Coverage (volume-based, no double-counting)
 
@@ -64,16 +85,16 @@ datapack/custom_vents/
     │   ├── tags/worldgen/biome/
     │   │   └── none.json                      ← empty biome tag
     │   └── worldgen/placed_feature/
-    │       ├── crimsite_vent.json             ← chance: 700
-    │       ├── scorchia_vent.json             ← chance: 700
-    │       ├── scoria_vent.json               ← chance: 400
-    │       ├── ochrum_vent.json               ← chance: 400
-    │       ├── aquatic_asurine_vent.json      ← chance: 400
-    │       ├── aquatic_veridium_vent.json     ← chance: 400
-    │       ├── aquatic_crimsite_vent.json     ← chance: 700
-    │       ├── aquatic_scorchia_vent.json     ← chance: 700
-    │       ├── aquatic_scoria_vent.json       ← chance: 400
-    │       └── aquatic_ochrum_vent.json       ← chance: 400
+    │       ├── crimsite_vent.json             ← chance: 250
+    │       ├── scorchia_vent.json             ← chance: 250
+    │       ├── scoria_vent.json               ← chance: 200
+    │       ├── ochrum_vent.json               ← chance: 200
+    │       ├── aquatic_asurine_vent.json      ← chance: 300
+    │       ├── aquatic_veridium_vent.json     ← chance: 300
+    │       ├── aquatic_crimsite_vent.json     ← chance: 250
+    │       ├── aquatic_scorchia_vent.json     ← chance: 250
+    │       ├── aquatic_scoria_vent.json       ← chance: 200
+    │       └── aquatic_ochrum_vent.json       ← chance: 200
     ├── minecraft/
     │   └── worldgen/
     │       ├── configured_feature/            ← ore vein size overrides
