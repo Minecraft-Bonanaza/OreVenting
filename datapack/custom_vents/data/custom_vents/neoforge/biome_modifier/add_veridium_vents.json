@@ -10,8 +10,13 @@
     "minecraft:deep_cold_ocean",
     "minecraft:frozen_ocean",
     "minecraft:deep_frozen_ocean",
-    "terralith:deep_warm_ocean"
+    "terralith:deep_warm_ocean",
+    "terralith:alpha_islands",
+    "terralith:gravel_beach",
+    "terralith:mirage_isles"
   ],
-  "features": ["molten_vents:aquatic_veridium_vent"],
+  "features": [
+    "molten_vents:aquatic_veridium_vent"
+  ],
   "step": "vegetal_decoration"
 }

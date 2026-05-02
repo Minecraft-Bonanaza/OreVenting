@@ -20,7 +20,21 @@
     "terralith:savanna_slopes",
     "terralith:scarlet_mountains",
     "terralith:volcanic_crater",
-    "terralith:volcanic_peaks"
+    "terralith:volcanic_peaks",
+    "terralith:blooming_plateau",
+    "terralith:forested_highlands",
+    "terralith:white_cliffs",
+    "terralith:yellowstone",
+    "terralith:yosemite_cliffs",
+    "terralith:yosemite_lowlands",
+    "terralith:alpine_highlands",
+    "terralith:basalt_cliffs",
+    "terralith:haze_mountain",
+    "terralith:highlands",
+    "terralith:jungle_mountains",
+    "terralith:stony_spires",
+    "terralith:temperate_highlands",
+    "terralith:windswept_spires"
   ],
   "features": [
     "molten_vents:ochrum_vent"
